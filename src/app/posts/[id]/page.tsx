@@ -41,6 +41,7 @@ const PostDetail = () => {
         <div>
             <h1>{data.title}</h1>
             <p>{data.description}</p>
+            <p>{data.category?.name}</p>
 
             <DialogConfirmDelete 
                 handleDelete={handleDelete} 

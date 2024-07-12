@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/drawer"
 
 import { Button } from "@/components/ui/button";
-import FormPost from "./FormPost";
+import FormCategory from "./FormCategory";
 import { useState } from "react";
 
 const DrawerCategory = () => {
@@ -30,7 +30,7 @@ const DrawerCategory = () => {
                     <DrawerTitle className="text-center">Ajouter une catégorie</DrawerTitle>
                     {/* eslint-disable-next-line react/no-unescaped-entities */}
                     <DrawerDescription className="text-center">Renseignez l'ensemble des champs.</DrawerDescription>
-                    <FormPost setOpen={setOpen} />
+                    <FormCategory setOpen={setOpen} />
                 </DrawerHeader>
                 <DrawerFooter>
                     <DrawerClose>

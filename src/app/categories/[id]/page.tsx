@@ -6,12 +6,12 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { useParams, useRouter } from "next/navigation";
 import { deleteCategory, fetchCategoryById } from "@/services/category.service";
 
-type PostDetailParams = {
+type CategoryDetailParams = {
   id: string;
 };
 
-const PostDetail = () => {
-  const { id } = useParams<PostDetailParams>();
+const CategoryDetail = () => {
+  const { id } = useParams<CategoryDetailParams>();
   const router = useRouter();
   const { toast } = useToast();
 
@@ -24,8 +24,8 @@ const PostDetail = () => {
     mutationFn: deleteCategory,
     onSuccess: () => {
       toast({
-        title: "Post deleted",
-        description: "Your post has been deleted",
+        title: "Category deleted",
+        description: "Your Category has been deleted",
       });
       router.push("/");
     },
@@ -52,4 +52,4 @@ const PostDetail = () => {
   );
 };
 
-export default PostDetail;
+export default CategoryDetail;

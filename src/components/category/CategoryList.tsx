@@ -14,7 +14,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const PostList = () => {
+const CategoryList = () => {
   const { isPending, error, data } = useQuery({
     queryKey: ["getAllCategories"],
     queryFn: fetchAllCategories,
@@ -45,4 +45,4 @@ const PostList = () => {
   );
 };
 
-export default PostList;
+export default CategoryList;

@@ -5,11 +5,11 @@ import { Button } from "@/components/ui/button";
 import { createCategory } from "@/services/category.service";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-type FormPostProps = {
+type FormCategoryProps = {
   setOpen: (open: boolean) => void;
 };
 
-const FormPost = ({ setOpen }: FormPostProps) => {
+const FormCategory = ({ setOpen }: FormCategoryProps) => {
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
@@ -42,11 +42,11 @@ const FormPost = ({ setOpen }: FormPostProps) => {
           {mutation.isPending && (
             <span className="mr-4 h-4 w-4 rounded-full bg-white animate-pulse"></span>
           )}
-          Create post
+          Create Category
         </Button>
       </div>
     </form>
   );
 };
 
-export default FormPost;
+export default FormCategory;

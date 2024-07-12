@@ -43,11 +43,7 @@ const CategoryDetail = () => {
   return (
     <div>
       <h1>{data.name}</h1>
-
-      <DialogConfirmDelete
-        handleDelete={handleDelete}
-        isPending={mutation.isPending}
-      />
+      <DialogConfirmDelete handleDelete={handleDelete} isPending={mutation.isPending}/>
     </div>
   );
 };

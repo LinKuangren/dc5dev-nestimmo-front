@@ -1,11 +1,9 @@
-import Link from "next/link";
-import DrawerPost from "../post/DrawerPost";
-import NavigationMenuDemo from "@/components/globals/Navbar";
+import Navigation from "@/components/globals/Navbar";
 
 const Navbar = () => {
     return ( 
         <nav className="flex justify-between p-5">
-            <NavigationMenuDemo/>
+            <Navigation/>
         </nav>
      );
 }

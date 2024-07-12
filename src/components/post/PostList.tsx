@@ -25,22 +25,20 @@ const PostList = () => {
 
     return (
         <div>
-            <h2 className="text-4xl font-bold my-5 text-cyan-700">
-                Post list
-            </h2>
+            <h2 className="text-4xl font-bold my-5 text-cyan-700">Post List</h2>
             <DrawerPost />
             <div className="grid grid-cols-4 gap-2">
                 {data?.map((post: any) => (
                     <Link key={post.id} href={`/posts/${post.id}`}>
-                        <Card >
-                            <CardHeader>
-                                <CardTitle>{post.title}</CardTitle>
-                                <CardDescription>{post.description}</CardDescription>
-                            </CardHeader>
-                            <CardFooter>
+                        <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+                            <div className="flex flex-col space-y-1.5 mb-4">
+                                <h3 className="text-2xl font-semibold leading-none tracking-tight">{post.title}</h3>
+                                <p className="text-sm text-muted-foreground">{post.description}</p>
+                            </div>
+                            <div className="flex items-center">
                                 <p>{post.category?.name}</p>
-                            </CardFooter>
-                        </Card>
+                            </div>
+                        </div>
                     </Link>
                 ))}
             </div>

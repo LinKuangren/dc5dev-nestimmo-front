@@ -3,16 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { fetchAllCategories } from "@/services/category.service";
-import CategoryList from "@/components/category/CategoryList";
 import DrawerCategory from "@/components/category/DrawerCategory";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 
 const CategoryList = () => {
   const { isPending, error, data } = useQuery({
@@ -27,17 +18,17 @@ const CategoryList = () => {
 
   return (
     <div>
-      <h2 className="text-4xl font-bold my-5 text-cyan-700">Category list</h2>
+      <h2 className="text-4xl font-bold my-5 text-cyan-700">Category List</h2>
       <DrawerCategory />
       <div className="grid grid-cols-4 gap-2">
         {data?.map((category: any) => (
-          <Link key={category.id} href={`/categories/${category.id}`}>
-            <Card>
-              <CardHeader>
-                <CardTitle>{category.name}</CardTitle>
-                <CardDescription>Card Description</CardDescription>
-              </CardHeader>
-            </Card>
+          <Link key={category.id} href={`/category/${category.id}`}>
+            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+              <h3 className="text-2xl font-semibold leading-none tracking-tight">
+                {category.name}
+              </h3>
+              <p className="text-sm text-muted-foreground">Card Description</p>
+            </div>
           </Link>
         ))}
       </div>
